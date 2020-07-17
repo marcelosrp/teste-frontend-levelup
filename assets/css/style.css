@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+
+.header {
+  align-items: center;
+  border-bottom: 2px solid #cecece;
+  display: flex;
+  height: 70px;
+  padding: 0 66px 0 66px;
+  width: 100%;
+}
+.header__logo {
+  color: #ff0019;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0 31px 0 0;
+}
+.header__link {
+  color: #ff0019;
+  font-weight: 700;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+.content .itemContent--buscador {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  max-width: 575px;
+  padding: 0 50px;
+  width: 60%;
+}
+.content .itemContent--resultado {
+  background-color: #ff0019;
+  padding: 40px;
+  width: 100%;
+}
+.content .itemContent__title {
+  color: #ff0019;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+}
+.content .itemContent__subTitle {
+  color: #a4a4a4;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  margin: 0;
+}
+.content .form-wrapper {
+  margin-top: 20px;
+  width: 100%;
+}
+.content .error {
+  color: #ff0019;
+  display: block;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}
+.content .btn-default {
+  background-color: #ff0019;
+  border: none;
+  border-radius: 25px;
+  color: #FFF;
+  cursor: pointer;
+  height: 38px;
+  text-align: center;
+  width: 300px;
+}
+.content .btn-pesquisar:disabled {
+  background-color: #a4a4a4;
+  cursor: auto;
+}
+.content .endereco {
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: center;
+  padding: 0 80px;
+  position: relative;
+  height: 100%;
+}
+.content .endereco.hide {
+  display: none;
+}
+.content .endereco h1 {
+  color: #ff0019;
+  font-weight: 900;
+  font-size: 30px;
+  margin: 0;
+}
+.content .endereco p {
+  color: #a4a4a4;
+  font-size: 16px;
+  margin: 0;
+}
+.content #map {
+  height: 400px;
+  margin: 20px 0;
+  width: 100%;
+}
+.content .btn-nova-pesquisa {
+  bottom: 50px;
+  margin: 40px 0 0 0;
+  position: absolute;
+}
+.content .mui-textfield > input:focus ~ label,
+.content .mui-textfield > textarea:focus ~ label {
+  color: #ff0019;
+}
+.content .mui-textfield > input:focus,
+.content .mui-textfield > textarea:focus {
+  border-color: #a4a4a4;
+}
+
+/*# sourceMappingURL=style.css.map */

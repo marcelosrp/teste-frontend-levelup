@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Level Up</title>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__item">
+            <p class="header__logo">Buscar cep</p>
+        </div>
+        <div class="header__item">
+            <a class="header__link" href="#">CSS</a>
+            <a class="header__link" href="#">Componentes</a>
+            <a class="header__link" href="#">Javascript</a>
+            <a class="header__link" href="#">HTML</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="itemContent itemContent--buscador">
+            <h1 class="itemContent__title">
+                Digite um cep
+            </h1>
+            <h2 class="itemContent__subTitle">
+                Digite abaixo para consultar um Código de Endereçamento Postal (CEP) do Brasil.
+            </h2>
+            <div class="form-wrapper">
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input 
+                        type="text"
+                        name="cep"
+                        class="cep-field"
+                        required
+                    >
+                    <label>CEP</label>
+                </div>
+                <span class="error"></span>
+                <button 
+                    type="button"
+                    class="btn-default btn-pesquisar">
+                    Buscar
+                </button>
+            </div>
+            
+        </section>
+        <section class="itemContent itemContent--resultado">
+            <div class="endereco hide">
+                <div class="content-endereco"></div>
+                <div id='map'></div>
+                <button type="button" class="btn-default btn-nova-pesquisa">
+                    Nova pesquisa
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+</body>
+</html>

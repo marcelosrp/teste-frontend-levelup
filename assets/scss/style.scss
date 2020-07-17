@@ -1,0 +1,157 @@
+// Configs
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap');
+
+$primaryColor: #ff0019;
+$secondaryColor: #a4a4a4;
+$headerHeight: 70px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+.header {
+    align-items: center;
+    border-bottom: 2px solid #cecece;
+    display: flex;
+    height: $headerHeight;
+    padding: 0 66px 0 66px;
+    width: 100%;
+    
+    &__logo {
+        color: $primaryColor;
+        font-size: 20px;
+        font-weight: 900;
+        margin: 0 31px 0 0;
+    }
+
+    &__link {
+        color: $primaryColor;
+        font-weight: 700;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+}
+
+.content {
+    display: flex;
+    height: calc(100vh - #{$headerHeight});
+    width: 100%;
+
+    .itemContent {
+        &--buscador {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            max-width: 575px;
+            padding: 0 50px;
+            width: 60%;
+        }
+
+        &--resultado {
+            background-color: $primaryColor;
+            padding: 40px;
+            width: 100%;
+        }
+
+        &__title {
+            color: $primaryColor;
+            font-size: 30px;
+            font-weight: 900;
+            margin: 0 0 10px 0;
+        }
+
+        &__subTitle {
+            color: $secondaryColor;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            margin: 0;
+        }
+    }
+
+    .form-wrapper {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .error {
+        color: $primaryColor;
+        display: block;
+        font-size: 12px;
+        margin: 0 0 10px 0;
+    }
+
+    .btn-default {
+        background-color: $primaryColor;
+        border: none;
+        border-radius: 25px;
+        color: #FFF;
+        cursor: pointer;
+        height: 38px;
+        text-align: center;
+        width: 300px;
+    }
+
+    .btn-pesquisar {
+        &:disabled {
+            background-color: $secondaryColor;
+            cursor: auto;
+        }
+    }
+
+    .endereco {
+        background-color: #FFF;
+        display: flex;
+        flex-flow: column-reverse;
+        justify-content: center;
+        padding: 0 80px;
+        position: relative;
+        height: 100%;
+
+        &.hide {
+            display: none;
+        }
+
+        h1 {
+            color: $primaryColor;
+            font-weight: 900;
+            font-size: 30px;
+            margin: 0;
+        }
+
+        p {
+            color: $secondaryColor;
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+
+    #map {
+        height: 400px;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .btn-nova-pesquisa {
+        bottom: 50px;
+        margin: 40px 0 0 0;
+        position: absolute;
+    }
+
+    .mui-textfield>input:focus~label, 
+    .mui-textfield>textarea:focus~label {
+        color: $primaryColor;
+    }
+
+    .mui-textfield>input:focus, 
+    .mui-textfield>textarea:focus {
+        border-color: $secondaryColor;
+    }
+}
