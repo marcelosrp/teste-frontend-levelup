@@ -4,6 +4,7 @@
 $primaryColor: #ff0019;
 $secondaryColor: #a4a4a4;
 $headerHeight: 70px;
+$xs: 600px;
 
 * {
     box-sizing: border-box;
@@ -23,12 +24,22 @@ body {
     height: $headerHeight;
     padding: 0 66px 0 66px;
     width: 100%;
+
+    @media (max-width: $xs) {
+        flex-flow: column;
+        padding: 10px 15px;
+        height: auto;
+    }
     
     &__logo {
         color: $primaryColor;
         font-size: 20px;
         font-weight: 900;
         margin: 0 31px 0 0;
+        
+        @media (max-width: $xs) {
+            margin: 0 0 20px 0;
+        }
     }
 
     &__link {
@@ -36,6 +47,10 @@ body {
         font-weight: 700;
         margin: 0 15px;
         text-decoration: none;
+
+        @media (max-width: $xs) {
+            margin: 10px 5px;
+        }
     }
 }
 
@@ -43,6 +58,11 @@ body {
     display: flex;
     height: calc(100vh - #{$headerHeight});
     width: 100%;
+
+    @media (max-width: $xs) {
+        flex-flow: column;
+        margin-top: 30px;
+    }
 
     .itemContent {
         &--buscador {
@@ -52,12 +72,23 @@ body {
             max-width: 575px;
             padding: 0 50px;
             width: 60%;
+
+            @media (max-width: $xs) {
+                padding: 0 30px;
+                max-width: 100%;
+                width: 100%;
+            }
         }
 
         &--resultado {
             background-color: $primaryColor;
             padding: 40px;
             width: 100%;
+
+            @media (max-width: $xs) {
+                margin-top: 30px;
+                padding: 0;
+            }
         }
 
         &__title {
@@ -97,6 +128,10 @@ body {
         height: 38px;
         text-align: center;
         width: 300px;
+
+        @media (max-width: $xs) {
+            width: 100%;
+        }
     }
 
     .btn-pesquisar {
@@ -115,6 +150,10 @@ body {
         position: relative;
         height: 100%;
 
+        @media (max-width: $xs) {
+            padding: 15px;
+        }
+
         &.hide {
             display: none;
         }
@@ -124,6 +163,12 @@ body {
             font-weight: 900;
             font-size: 30px;
             margin: 0;
+
+            @media (max-width: $xs) {
+                font-size: 25px;
+                line-height: 25px;
+                margin: 0 0 10px 0;
+            }
         }
 
         p {
@@ -141,8 +186,12 @@ body {
 
     .btn-nova-pesquisa {
         bottom: 50px;
-        margin: 40px 0 0 0;
         position: absolute;
+        
+        @media (max-width: $xs) {
+            margin: 20px 0 0 0;
+            position: initial;
+        }
     }
 
     .mui-textfield>input:focus~label, 

@@ -18,11 +18,23 @@ body {
   padding: 0 66px 0 66px;
   width: 100%;
 }
+@media (max-width: 600px) {
+  .header {
+    flex-flow: column;
+    padding: 10px 15px;
+    height: auto;
+  }
+}
 .header__logo {
   color: #ff0019;
   font-size: 20px;
   font-weight: 900;
   margin: 0 31px 0 0;
+}
+@media (max-width: 600px) {
+  .header__logo {
+    margin: 0 0 20px 0;
+  }
 }
 .header__link {
   color: #ff0019;
@@ -30,11 +42,22 @@ body {
   margin: 0 15px;
   text-decoration: none;
 }
+@media (max-width: 600px) {
+  .header__link {
+    margin: 10px 5px;
+  }
+}
 
 .content {
   display: flex;
   height: calc(100vh - 70px);
   width: 100%;
+}
+@media (max-width: 600px) {
+  .content {
+    flex-flow: column;
+    margin-top: 30px;
+  }
 }
 .content .itemContent--buscador {
   display: flex;
@@ -44,10 +67,23 @@ body {
   padding: 0 50px;
   width: 60%;
 }
+@media (max-width: 600px) {
+  .content .itemContent--buscador {
+    padding: 0 30px;
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .content .itemContent--resultado {
   background-color: #ff0019;
   padding: 40px;
   width: 100%;
+}
+@media (max-width: 600px) {
+  .content .itemContent--resultado {
+    margin-top: 30px;
+    padding: 0;
+  }
 }
 .content .itemContent__title {
   color: #ff0019;
@@ -82,6 +118,11 @@ body {
   text-align: center;
   width: 300px;
 }
+@media (max-width: 600px) {
+  .content .btn-default {
+    width: 100%;
+  }
+}
 .content .btn-pesquisar:disabled {
   background-color: #a4a4a4;
   cursor: auto;
@@ -95,6 +136,11 @@ body {
   position: relative;
   height: 100%;
 }
+@media (max-width: 600px) {
+  .content .endereco {
+    padding: 15px;
+  }
+}
 .content .endereco.hide {
   display: none;
 }
@@ -103,6 +149,13 @@ body {
   font-weight: 900;
   font-size: 30px;
   margin: 0;
+}
+@media (max-width: 600px) {
+  .content .endereco h1 {
+    font-size: 25px;
+    line-height: 25px;
+    margin: 0 0 10px 0;
+  }
 }
 .content .endereco p {
   color: #a4a4a4;
@@ -116,8 +169,13 @@ body {
 }
 .content .btn-nova-pesquisa {
   bottom: 50px;
-  margin: 40px 0 0 0;
   position: absolute;
+}
+@media (max-width: 600px) {
+  .content .btn-nova-pesquisa {
+    margin: 20px 0 0 0;
+    position: initial;
+  }
 }
 .content .mui-textfield > input:focus ~ label,
 .content .mui-textfield > textarea:focus ~ label {
