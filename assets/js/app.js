@@ -19,19 +19,25 @@ var app = {
     this.error = document.querySelector('.error');
     this.map = document.getElementById('map');
     this.btnPesquisa.addEventListener('click', function () {
-      var cep = _this.cepField.value.replace('-', '');
-
-      if (_this.validaCep(cep)) {
-        _this.error.innerHTML = "";
-
-        _this.btnPesquisa.setAttribute('disabled', true);
-
-        _this.buscaCEP(cep);
-      }
+      _this.dispatchClick();
     });
     this.btnNovaPesquisa.addEventListener('click', function () {
       _this.novaPesquisa();
     });
+    this.cepField.addEventListener('keyup', function (event) {
+      if (event.keyCode === 13) {
+        _this.dispatchClick();
+      }
+    });
+  },
+  dispatchClick: function dispatchClick() {
+    var cep = this.cepField.value.replace('-', '');
+
+    if (this.validaCep(cep)) {
+      this.error.innerHTML = "";
+      this.btnPesquisa.setAttribute('disabled', true);
+      this.buscaCEP(cep);
+    }
   },
   validaCep: function validaCep(cep) {
     var testaCep = /^[0-9]{8}$/;

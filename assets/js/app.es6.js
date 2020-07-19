@@ -19,18 +19,28 @@ const app = {
         this.map = document.getElementById('map')
 
         this.btnPesquisa.addEventListener('click', () => {
-            const cep = this.cepField.value.replace('-', '');
-
-            if(this.validaCep(cep)) {
-                this.error.innerHTML = "";
-                this.btnPesquisa.setAttribute('disabled', true)
-                this.buscaCEP(cep);
-            }
+            this.dispatchClick();
         });
 
         this.btnNovaPesquisa.addEventListener('click', () => {
             this.novaPesquisa();
         });
+
+        this.cepField.addEventListener('keyup', event => {
+            if(event.keyCode === 13) {
+                this.dispatchClick();
+            }
+        })
+    },
+
+    dispatchClick() {
+        const cep = this.cepField.value.replace('-', '');
+
+        if(this.validaCep(cep)) {
+            this.error.innerHTML = "";
+            this.btnPesquisa.setAttribute('disabled', true)
+            this.buscaCEP(cep);
+        }
     },
 
     validaCep(cep) {
